@@ -40,7 +40,33 @@ func main() {
 go run .
 ```
 
+## C. Import external package
+1. Search package from internet, we use "quote" as example
 
+See details in this link[Pakage DOC](https://pkg.go.dev/rsc.io/quote/v4#section-readme)
+
+Click the copy button form the website 
+![plot](./img/temp_img1.png)
+
+2. Edit the code to import package
+```go
+import "rsc.io/quote"
+
+func main() {
+	//fmt.Println("Hello, World!")
+	fmt.Println(quote.Go())
+}
+```
+
+3. Add package to dependency file
+```shell
+go mod tidy
+```
+
+## D. Package Management
+- Initialize a module using go mod init {packagename}
+- Add dependency using go get {packagename}
+- Remove dependency by deleting the import references and running go mod tidy -v command
 ## User Journey Diagram
 
 ```mermaid
